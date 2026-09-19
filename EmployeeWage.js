@@ -10,6 +10,7 @@
     const Part_Time =4;
     const Full_Time = 8;
     const wagePerHour = 20;
+    const workingDays = 20;
     
     function getEmployeeWage(empoyeeType) {
     switch (empoyeeType) {
@@ -40,10 +41,13 @@
 
     const empoyeeType = Math.floor(Math.random() * 3);
     const workingHours = getEmployeeWage(empoyeeType);
-
+    
     const dailyWage = workingHours * wagePerHour;
+
+    const totalWage = dailyWage * workingDays;
     console.log(`Employee Working Hours is : ${workingHours}`); 
     console.log(`Employee Daily Wage is : ${dailyWage}`);
+    console.log(`Employee Total Wage is : ${totalWage}`);
 
   rl.close();
   }); 
