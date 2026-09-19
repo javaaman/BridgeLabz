@@ -10,6 +10,20 @@
     const Part_Time =4;
     const Full_Time = 8;
     const wagePerHour = 20;
+    
+    function getEmployeeWage(empoyeeType) {
+    switch (empoyeeType) {
+      case No_Work:
+          return 0;
+
+      case Part_Time:
+          return 4;
+
+      case Full_Time:
+          return 8;
+    }
+  }
+
  rl.question('Enter Employee Name : ', (employeeName) => {
 
 
@@ -25,21 +39,7 @@
     console.log(`The ${employeeName} is present.`);
 
     const empoyeeType = Math.floor(Math.random() * 3);
-    let workingHours = 0;
-
-
-    switch (empoyeeType) {
-      case No_Work:
-          workingHours = 0;
-          break;
-      case Part_Time:
-          workingHours = 4;
-          break;
-
-      case Full_Time:
-          workingHours = 8;
-          break;
-    }
+    const workingHours = getEmployeeWage(empoyeeType);
 
     const dailyWage = workingHours * wagePerHour;
     console.log(`Employee Working Hours is : ${workingHours}`); 
